@@ -33,8 +33,9 @@ LogPrefix = "hubot-msteams:"
 
 
 class MicrosoftTeamsMiddleware extends BaseMiddleware
-    constructor: (@robot, appId, appPassword) ->
-        super(@robot)
+    constructor: (bot, appId, appPassword) ->
+        super(bot)
+        @robot = bot
         @appId = appId
         @appPassword = appPassword
 

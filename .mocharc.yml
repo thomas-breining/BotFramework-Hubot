@@ -1,0 +1,6 @@
+spec: test/*.coffee
+require:
+  - coffeescript/register
+reporter:
+  - dot
+recursive: true

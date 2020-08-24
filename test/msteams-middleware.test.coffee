@@ -1,3 +1,4 @@
+os = require 'os'
 chai = require 'chai'
 expect = chai.expect
 { TextMessage, Message, User } = require 'hubot'
@@ -1109,7 +1110,7 @@ describe 'MicrosoftTeamsMiddleware', ->
                 done()
             , 200, robot, expected)
 
-        it 'should send combined responses for messages received within 100ms', ->
+        it 'should send combined responses for messages received within 100ms', (done) ->
             # Setup
             payload2 = [{
                 type: 'typing'
@@ -1165,7 +1166,7 @@ describe 'MicrosoftTeamsMiddleware', ->
             },
             {
                 type: 'message'
-                text: "a message\nanother message"
+                text: "a message#{os.EOL}another message"
                 address:
                     conversation:
                         isGroup: 'true'
